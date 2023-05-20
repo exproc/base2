@@ -3,7 +3,6 @@
 
 PUID=${PUID:-6000}
 PGID=${PGID:-6000}
-TZ=$TZ
 groupmod -o -g "$PGID" abc
 usermod -o -u "$PUID" abc
 
@@ -16,7 +15,6 @@ GID/UID
 echo "
 User UID:    $(id -u abc)
 User GID:    $(id -g abc)
-TZ: $(TZ)
 ───────────────────────────────────────
 "
 
