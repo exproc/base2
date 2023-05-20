@@ -1,0 +1,24 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+PUID=${PUID:-6000}
+PGID=${PGID:-6000}
+
+groupmod -o -g "$PGID" abc
+usermod -o -u "$PUID" abc
+
+echo '
+
+───────────────────────────────────────
+GID/UID
+───────────────────────────────────────'
+echo "
+User UID:    $(id -u abc)
+User GID:    $(id -g abc)
+───────────────────────────────────────
+"
+
+
+chown abc:abc /tftpboot
+chown abc:abc /config
+chown abc:abc /defaults
