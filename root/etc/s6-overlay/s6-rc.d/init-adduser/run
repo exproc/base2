@@ -7,6 +7,7 @@ PGID=${PGID:-6000}
 groupmod -o -g "$PGID" abc
 usermod -o -u "$PUID" abc
 
+
 echo '
 
 ───────────────────────────────────────
@@ -15,10 +16,11 @@ GID/UID
 echo "
 User UID:    $(id -u abc)
 User GID:    $(id -g abc)
+TZ: $(TZ)
 ───────────────────────────────────────
 "
 
 
-chown abc:abc /tftpboot
-chown abc:abc /config
-chown abc:abc /defaults
+lsiown abc:abc /tftpboot
+lsiown abc:abc /config
+lsiown abc:abc /defaults
